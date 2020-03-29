@@ -1,0 +1,19 @@
+<mat-card class='card-section'>
+	<div *ngIf="selectedTodo">
+		<h2>{{ selectedTodo.title }}</h2>
+		<div><span>id: </span>{{selectedTodo.id}}</div>
+		<div>
+		<label>title:
+			<input [(ngModel)]="selectedTodo.title" placeholder="title"/>
+		</label>
+		</div>
+		<hr>
+	</div>
+	<ol class="todos">
+		<li *ngFor="let todo of todos" (click)="onSelect(todo)" [class.selected]="todo === selectedTodo">
+			<span>{{ todo.title }}</span> ||  
+			<span>{{ todo.completed }}</span>
+			<span><a [routerLink]="['/todo-edit', todo.id]" > Edit</a></span>
+		</li>
+	</ol>
+</mat-card>

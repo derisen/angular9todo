@@ -1,3 +1,4 @@
+import { Todo } from './todo';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -5,19 +6,27 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TodoService {
-  private url = '';
+  url = 'https://jsonplaceholder.typicode.com/todos';
 
   constructor(private http: HttpClient) { }
 
-  getTasks() { 
-    return this.http.get('https://jsonplaceholder.typicode.com/todos');
+  getTodos() { 
+    return this.http.get<Todo[]>(this.url);
   }
 
-  getTask() { }
+  getTodo(id) { 
+    return this.http.get(this.url + '/' + id);
+  }
   
-  addTask() { }
+  addTodo(todo) { 
+    return this.http.post(this.url, JSON.stringify(todo));
+  }
 
-  deleteTask() { }
+  deleteTodo(id) {
+    return this.http.delete(this.url + '/' + id);
+  }
 
-  editTask() { }
+  editTodo(todo) { 
+    return this.http.put(this.url + '/' + todo.id, JSON.stringify(todo))
+  }
 }

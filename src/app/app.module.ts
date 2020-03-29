@@ -1,15 +1,15 @@
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
-
 import {
   MsalModule,
   MsalInterceptor,
@@ -22,7 +22,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { Configuration } from 'msal';
 import { TodoService } from './todo.service';
-import { TodoComponent } from './todo/todo.component';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { TodoViewComponent } from './todo-view/todo-view.component';
+import { TodoAddComponent } from './todo-add/todo-add.component';
 
 export const protectedResourceMap: [string, string[]][] = [
   ['https://localhost:44351/api/todolist/', ['api://9a4f1ef6-f28f-4175-a80b-8939893f90f4/access_as_user']]
@@ -64,9 +66,10 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
     HomeComponent,
-    TodoComponent,
+    TodoEditComponent,
+    TodoViewComponent,
+    TodoAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,8 +79,12 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     MatToolbarModule,
     MatButtonModule,
     MatListModule,
+    MatCardModule,
     AppRoutingModule,
-    MsalModule
+    MsalModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [
     {

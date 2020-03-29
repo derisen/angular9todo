@@ -8,7 +8,7 @@ import { Logger, CryptoUtils } from 'msal';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'MSAL - Angular 9 Sample App';
+  title = 'Microsoft Identity Platform';
   isIframe = false;
   loggedIn = false;
 
@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
 
     this.broadcastService.subscribe('msal:loginSuccess', () => {
       this.checkoutAccount();
+    });
+
+    this.broadcastService.subscribe('msal:loginFailure', (payload) => {
+      console.log('login failed');
     });
 
     this.authService.handleRedirectCallback((authError, response) => {

@@ -1,0 +1,9 @@
+<mat-card class='card-section'>
+    <form #add="ngForm" (ngSubmit)="addTodo(add.value)">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Enter a task</mat-label>
+            <input matInput type="text" name="title" placeholder="task" class="input-field" [(ngModel)]="todo">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" value="submit" class="submit-button">Add</button>
+    </form>
+</mat-card>

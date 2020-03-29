@@ -1,2 +1,11 @@
-<p class="welcome">Welcome to the MSAL.js Angular Quickstart!</p>
-<p>This sample demonstrates how to configure MSAL Angular to login, logout, protect a route, and acquire an access token for a protected resource such as the Microsoft Graph.</p>
+
+<mat-card class='card-section'>
+    <mat-card-title>Sign-in with Microsoft Azure AD</mat-card-title>
+    <mat-card-subtitle>Getting an access token with Azure AD and calling a Web API</mat-card-subtitle>
+    <mat-card-content>This simple sample demonstrates how to use the Microsoft Authentication Library for JavaScript (msal.js) to get an access token and call an API secured by Azure AD.</mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['todo-view']">Get My Tasks</button>
+      <button mat-raised-button [routerLink]="['todo-add']">Add a New Task</button>
+    </mat-card-actions>
+    <mat-card-content></mat-card-content>
+</mat-card>
