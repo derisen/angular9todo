@@ -51,3 +51,13 @@
     margin: 10%;
     padding: 5%;
 }
+
+
+.example-container {
+    height: 100%;
+    overflow: auto;
+}
+  
+table {
+    width: 100%;
+}

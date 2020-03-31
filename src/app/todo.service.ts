@@ -15,7 +15,7 @@ export class TodoService {
   }
 
   getTodo(id) { 
-    return this.http.get(this.url + '/' + id);
+    return this.http.get<Todo>(this.url + '/' + id);
   }
   
   addTodo(todo) { 

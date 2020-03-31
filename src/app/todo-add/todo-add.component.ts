@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { TodoService } from './../todo.service';
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
@@ -11,7 +12,7 @@ export class TodoAddComponent implements OnInit {
 
   todo: Todo;
 
-  constructor(private service: TodoService) { }
+  constructor(private service: TodoService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,8 +20,7 @@ export class TodoAddComponent implements OnInit {
   addTodo(todo): void {
     console.log(todo)
     this.service.addTodo(todo).subscribe(response => {
-      console.log(response);
-      // this.todos.push({id: response['id'], title: title.title, completed: false})
+      this.router.navigate(['/']);
     })
  }
 

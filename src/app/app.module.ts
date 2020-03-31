@@ -1,6 +1,7 @@
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -84,6 +85,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     MsalModule,
     FormsModule,
     MatInputModule,
+    MatTableModule,
     MatFormFieldModule
   ],
   providers: [

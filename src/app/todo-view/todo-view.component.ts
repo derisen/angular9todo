@@ -11,6 +11,7 @@ export class TodoViewComponent implements OnInit {
 
   todos: Todo[];
   selectedTodo: Todo;
+  displayedColumns = ['id', 'title', 'completed', 'edit'];
 
   constructor(private service: TodoService) { }
 
@@ -25,9 +26,9 @@ export class TodoViewComponent implements OnInit {
     });
   }
 
-  onSelect(item): void {
-    console.log(item);
-    this.selectedTodo = item;
-  }
+  // onSelect(item): void {
+  //   console.log(item);
+  //   this.selectedTodo = item;
+  // }
 
 }
